@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Aeonik';
+    font-display: swap;
+    src: url('/fonts/Aeonik-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    font-display: swap;
+    src: url('/fonts/Aeonik-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    font-display: swap;
+    src: url('/fonts/Aeonik-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aeonik';
+    font-display: swap;
+    src: url('/fonts/Aeonik-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@layer base {
+    * {
+        @apply m-0 p-0 border-0
+    }
+
+    *, *::before, *::after {
+        @apply box-border
+    }
+
+    :focus, :active {
+        @apply outline-0
+    }
+
+    a:focus, a:active {
+        @apply outline-0
+    }
+
+    nav, header, footer, aside {
+        @apply block
+    }
+
+    html, body {
+        -ms-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        @apply h-screen w-full min-w-[375px] font-aeonik text-base font-normal
+    }
+
+    input, button, textarea {
+        @apply font-inherit
+    }
+
+    input::-ms-clear {
+        @apply hidden
+    }
+
+    input::-webkit-outer-spin-button {
+        @apply appearance-none m-0
+    }
+
+    input::-webkit-inner-spin-button {
+        @apply appearance-none m-0
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    button {
+        @apply cursor-pointer
+    }
+
+    button::-moz-focus-inner {
+        @apply p-0 border-0
+    }
+
+    a, a:visited, a:hover {
+        @apply no-underline
+    }
+
+    img {
+        @apply align-top
+    }
+
+    ul li {
+        @apply list-none
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply text-inherit
+    }
+}
+
+@layer components {
+    .heading-primary{
+        @apply font-sourceCode font-medium text-3xl -tracking-[0.5px] text-black
+    }
+
+    .heading-secondary{
+        @apply font-sourceCode font-extrabold text-2xl text-black
+    }
+
+    .heading-tertiary{
+        @apply font-bold text-xl text-black
+    }
+
+    .text-usual{
+        @apply font-light text-2md text-black
+    }
+
+    .text-small{
+        @apply font-inter font-normal text-base text-black
+    }
+
+    .text-large{
+        @apply font-light text-3lg tracking-[0.25px] text-black
+    }
+
+    .btn{
+        @apply flex justify-center items-center font-medium text-2md
+    }
+}
+
+@layer utilities {
+
+    .iad{
+        @apply relative
+    }
+
+    .iad img{
+        @apply absolute top-0 left-0 w-full h-full object-cover
+    }
+}
+
