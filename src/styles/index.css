@@ -62,7 +62,7 @@
         -ms-text-size-adjust: 100%;
         -moz-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
-        @apply h-screen w-full min-w-[375px] font-aeonik text-base font-normal
+        @apply h-screen w-full min-w-[375px] font-aeonik text-base sm:text-[12px] font-normal
     }
 
     input, button, textarea {
@@ -111,43 +111,68 @@
 }
 
 @layer components {
-    .heading-primary{
+    .heading-primary {
         @apply font-sourceCode font-medium text-3xl -tracking-[0.5px] text-black
     }
 
-    .heading-secondary{
+    .heading-secondary {
         @apply font-sourceCode font-extrabold text-2xl text-black
     }
 
-    .heading-tertiary{
+    .heading-tertiary {
         @apply font-bold text-xl text-black
     }
 
-    .text-usual{
-        @apply font-light text-2md text-black
+    .text-usual {
+        @apply font-light text-2md
     }
 
-    .text-small{
+    .text-small {
         @apply font-inter font-normal text-base text-black
     }
 
-    .text-large{
+    .text-large {
         @apply font-light text-3lg tracking-[0.25px] text-black
     }
 
-    .btn{
-        @apply flex justify-center items-center font-medium text-2md
+    .btn {
+        @apply flex justify-center items-center font-normal text-2md transition-all duration-300
+    }
+
+    .btn-black {
+        @apply bg-black-light text-white hover:opacity-[.8]
+    }
+
+    .btn-black-25 {
+        @apply bg-black-light25 text-white hover:bg-black
+    }
+
+    .btn-white {
+        @apply bg-white text-yellow hover:text-black hover:bg-yellow
+    }
+
+    .btn-yellow {
+        @apply bg-yellow text-black hover:bg-white
     }
 }
 
 @layer utilities {
 
-    .iad{
+    .iad {
         @apply relative
     }
 
-    .iad img{
+    .iad img {
         @apply absolute top-0 left-0 w-full h-full object-cover
+    }
+
+    .scroll-hide {
+        -ms-overflow-style: none;
+    }
+
+    .scroll-hide::-webkit-scrollbar {
+        width: 0;
+        height: 0;
     }
 }
 

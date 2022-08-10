@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [".src/**/.{ts,tsx}", ".pages/**/.{ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
       '2xl': {max: '1439px'},
@@ -17,11 +17,13 @@ module.exports = {
       black: {
         light: '#010101',
         light25: 'rgba(1, 1, 1, 0.25)',
+        light50: 'rgba(1, 1, 1, 0.5)',
         DEFAULT: '#000000',
       },
       gray: {
         light: '#F4F4F4',
-        DEFAULT: '#9B9B9B',
+        DEFAULT: '#CFCFCF',
+        dark: '#9B9B9B',
       },
       yellow: {
         DEFAULT: '#DDF247',
@@ -52,6 +54,10 @@ module.exports = {
       sm: '2px',
       md: '14px',
       lg: '20px',
+    },
+    boxShadow: {
+      form: '0px 21px 127px 22px rgba(221, 242, 71, 0.3)',
     }
   },
 }
+

@@ -2,6 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  webpack: (config, {buildId, dev, isServer, defaultLoaders, webpack}) => {
+    config.module.rules.push(
+      {
+        test: /\.woff$/,
+        loader: 'file-loader',
+      }
+    );
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+
+    return config;
+  }
 }
 
 module.exports = nextConfig
