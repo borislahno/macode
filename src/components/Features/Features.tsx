@@ -8,15 +8,14 @@ const Features: React.FC = () => {
 
 	const cardBox = useRef<HTMLDivElement>(null);
 
-	const onScroll = (event: any) => {
-		if (cardBox.current) {
-			cardBox.current.scrollLeft += (event.deltaY);
-		}
+	const onFeatureClick = () => {
+
 	}
 
 	return (
-		<section className='flex md:flex-col justify-between gap-[40px] pt-[119px] md:pt-[70px] xs:pt-[35px] pb-[56px] xs:pb-[35px] pl-[50px] sm:pl-[20px]
+		<section className=' xs:pb-[35px] pl-[50px] sm:pl-[20px] pt-[119px] md:pt-[70px] xs:pt-[35px] pb-[56px]
 		 bg-gray-light'>
+			<div className='max-w-[1440px] mx-auto flex md:flex-col justify-between gap-[40px]'>
 			<div className='max-w-[345px]'>
 				<h3 className='mb-[46px] md:mb-[24px] heading-tertiary'>Our Features Special For You</h3>
 				<div className='max-w-[256px] mb-[87px] md:mb-[40px] text-usual'>We provide various special features for all of you</div>
@@ -26,13 +25,14 @@ const Features: React.FC = () => {
 					<div className='w-[51px] h-full bg-gray'/>
 				</div>
 			</div>
-			<div className='flex gap-[39px] sm:gap-[20px] max-w-[812px] overflow-x-auto scroll-hide' ref={cardBox} onWheel={onScroll}>
+			<div className='flex gap-[39px] sm:gap-[20px] max-w-[812px] overflow-x-auto scroll-hide' ref={cardBox}>
 				<FeatureCard icon={<TutorsIcon className="w-[40px] h-[40px]"/>} title="Best Tutors"
-										 text="Bring your design vision to life in clean, semantic HTML5"/>
+										 text="Bring your design vision to life in clean, semantic HTML5" onClick={onFeatureClick}/>
 				<FeatureCard icon={<FlexibleIcon className="w-[40px] h-[40px]"/>} title="Flexible"
-										 text="Connect your marketing tools with built-in integrations" variant="yellow"/>
+										 text="Connect your marketing tools with built-in integrations" variant="yellow" onClick={onFeatureClick}/>
 				<FeatureCard icon={<AccessIcon className="w-[40px] h-[40px]"/>} title="Easy Access"
-										 text="Connect your marketing tools with built-in integrations"/>
+										 text="Connect your marketing tools with built-in integrations" onClick={onFeatureClick}/>
+			</div>
 			</div>
 		</section>
 	);
